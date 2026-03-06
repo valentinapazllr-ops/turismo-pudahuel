@@ -1,0 +1,36 @@
+$primary: #10b981; // Emerald-500
+$primary-dark: #059669; // Emerald-600
+$secondary: #3b82f6; // Blue-500
+$accent: #f59e0b; // Amber-500
+$dark: #0f172a; // Slate-900
+$light: #f8fafc; // Slate-50
+$gray: #64748b; // Slate-500
+$glass: rgba(255, 255, 255, 0.7);
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow:
+  0 4px 6px -1px rgb(0 0 0 / 0.1),
+  0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg:
+  0 10px 15px -3px rgb(0 0 0 / 0.1),
+  0 4px 6px -4px rgb(0 0 0 / 0.1);
+$radius: 0.75rem;
+$transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+@mixin glass-effect {
+  background: $glass;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@mixin card-effect {
+  background: white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
